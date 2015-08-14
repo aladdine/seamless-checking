@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<title>WebRTC: Still photo capture demo</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="main.css" type="text/css" media="all">
+	<script src="capture.js">
+	</script>
+</head>
+<body>
+
+ <!-- For output results -->
+
+        <input type="button" value="Retrieve Image" id="retrieve">
+        <pre id="response"></pre>
+ 
+        <!-- Import libraries -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="facepp-sdk.min.js"></script>
+
+
+ 
+        <script type="text/javascript">
+        
+            $("#retrieve").on("click", function(){
+            var image_url = $("#photo").attr("src");	
+            var base64 = require("sdk/base64");
+
+           decodedData = base64.decode(image_url, "image_url");
+            var api = new FacePP('0ef14fa726ce34d820c5a44e57fef470',
+                     '4Y9YXOMSDvqu1Ompn9NSpNwWQFHs1hYD',
+                     { apiURL: 'http://apicn.faceplusplus.com/v2' });
+							api.request('detection/detect', {
+							  url: decodedData
+							}, function(err, result) {
+							  if (err) {
+							    $('#response').text('Load failed.');
+							    return;
+							  }
+							  $('#response').text(JSON.stringify(result));
+							});
+				});			
+        </script>
+ <!-- # For output results -->       
+<div class="contentarea">
+	<h1>
+		MDN - WebRTC: Still photo capture demo
+	</h1>
+	<p>
+		This example demonstrates how to set up a media stream using your built-in webcam, fetch an image from that stream, and create a PNG using that image.
+	</p>
+  <div class="camera">
+    <video id="video">Video stream not available.</video>
+    <button id="startbutton">Take photo</button> 
+  </div>
+  <canvas id="canvas">
+  </canvas>
+  <div class="output">
+    <img id="photo" alt="The screen capture will appear in this box."> 
+  </div>
+	
+</div>
+</body>
+</html>
