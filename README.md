@@ -1,5 +1,5 @@
 # Seamless Checking (winner app at Levi's IoT hackathon 2015 )
-This event checking app uses image recognition API Face++ 
+This event checking app uses image recognition API Face++ and Neura API for a seamless checking experience at events.
 
 # User case
 Users are asked to upoload a few seconds video when they signup for an event. The video is then sliced to several images to train the Fae++ image recognition API. When the user arrives at the venue, there will be a camera at the door which takes a picture of the user, sends it to Face++ API and see whether the person at the door matches the person who registered. This means that users do not have to checkin manually anymore.
