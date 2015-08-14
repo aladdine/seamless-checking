@@ -1,4 +1,4 @@
-# seamless-checking (Winning app at Levi's IoT hackathon 2015 )
+# Seamless Checking (winning app at Levi's IoT hackathon 2015 )
 This event checking app uses image recognition API Face++ 
 
 # User case
