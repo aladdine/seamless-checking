@@ -6,3 +6,5 @@ Users are asked to upoload a few seconds video when they signup for an event. Th
 
 On top of this, the image recognition API is used to survey whether users were smiling or not when they entered the venue. This can be used as a measure of users excitement about the event.
 
+The Face++ API is also combined with the Neura API so event organizers can tell where attendees are coming from: which city, from work or gym, walking or driving, etc. This app includes a visualization dashboatrd built in D3JS for event organizers to see this data and make sense of it quickly.
+
